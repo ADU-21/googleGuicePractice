@@ -5,15 +5,11 @@ import javax.inject.Named;
 import java.util.logging.Logger;
 
 public class TextEditor {
-    private final SpellChecker spellChecker;
-    private final Logger logger;
-
     @Inject
-    public TextEditor(SpellChecker spellChecker, Logger logger) {
-        System.out.println("TextEditor Constructor called");
-        this.spellChecker = spellChecker;
-        this.logger = logger;
-    }
+    @Named("default")
+    private SpellChecker spellChecker;
+    @Inject
+    private Logger logger;
 
     public void makeSpellCheck() {
         logger.info("TextEditor.makeSpellCheck called");

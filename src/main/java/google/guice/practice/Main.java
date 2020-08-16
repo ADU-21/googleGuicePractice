@@ -10,5 +10,6 @@ public class Main {
         TextEditor editor = injector.getInstance(TextEditor.class);
 
         editor.makeSpellCheck();
+        editor.makeSpellCheck();
     }
 }
