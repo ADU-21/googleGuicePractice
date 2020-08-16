@@ -1,6 +1,7 @@
 package google.guice.practice.module;
 
 import com.google.inject.AbstractModule;
+import com.google.inject.name.Named;
 import com.google.inject.name.Names;
 import google.guice.practice.OpenOfficeWorldSpellCheckerImpl;
 import google.guice.practice.SpellChecker;
@@ -19,5 +20,6 @@ public class TextEditorModule extends AbstractModule {
 
         // @Named binding
         bind(SpellChecker.class).annotatedWith(Names.named("OpenOffice")).to(OpenOfficeWorldSpellCheckerImpl.class);
+        bind(String.class).annotatedWith(Names.named("JDBC")).toInstance("jdbc:mysql://localhostL5326/emp");
     }
 }

@@ -9,6 +9,7 @@ public class Main {
         Injector injector = Guice.createInjector(new TextEditorModule());
         TextEditor editor = injector.getInstance(TextEditor.class);
 
+        editor.makeConnection();
         editor.makeSpellCheck();
     }
 }
