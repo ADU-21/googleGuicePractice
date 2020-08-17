@@ -1,5 +1,7 @@
 package google.guice.practice;
 
+import google.guice.practice.annotation.BeforeCheck;
+
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.logging.Logger;

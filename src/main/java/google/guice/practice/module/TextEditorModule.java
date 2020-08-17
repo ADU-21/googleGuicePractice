@@ -2,8 +2,11 @@ package google.guice.practice.module;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Scopes;
+import com.google.inject.matcher.Matchers;
 import com.google.inject.name.Names;
 import google.guice.practice.SpellChecker;
+import google.guice.practice.annotation.BeforeCheck;
+import google.guice.practice.interceptor.CheckInterceptor;
 import google.guice.practice.module.provider.SpellCheckerProvider;
 
 public class TextEditorModule extends AbstractModule {
@@ -24,7 +27,7 @@ public class TextEditorModule extends AbstractModule {
         bind(SpellChecker.class)
                 .annotatedWith(Names.named("default"))
                 .toProvider(SpellCheckerProvider.class)
-                .in(Scopes.SINGLETON);
+                .asEagerSingleton();
     }
     // @Provides binding
 //    @Provides

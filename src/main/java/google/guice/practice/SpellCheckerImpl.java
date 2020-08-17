@@ -1,5 +1,7 @@
 package google.guice.practice;
 
+import google.guice.practice.annotation.BeforeCheck;
+
 public class SpellCheckerImpl implements SpellChecker {
     private final String dbUrl;
     private final String user;
@@ -15,6 +17,7 @@ public class SpellCheckerImpl implements SpellChecker {
     }
 
     @Override
+    @BeforeCheck
     public void checkSpelling() {
         System.out.println("Inside checkSpelling");
         System.out.println(dbUrl);
